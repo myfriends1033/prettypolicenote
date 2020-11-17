@@ -1,4 +1,4 @@
-#　Python Debugger
+# Python Debugger
 
 ## 擷取來源:
 

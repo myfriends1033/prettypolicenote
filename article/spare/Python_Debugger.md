@@ -120,7 +120,7 @@ PYTHONBREAKPOINT=ipdb.set_trace
 
 - PyCharm
     - [https://www.youtube.com/watch?v=QJtWxm12Eo0](https://www.youtube.com/watch?v=QJtWxm12Eo0)
-    - [Step 2. Debug your first Python application – Help | PyCharm](https://www.jetbrains.com/help/pycharm/debugging-your-first-python-application.html)
+    - [Step 2](https://www.jetbrains.com/help/pycharm/debugging-your-first-python-application.html)
 - vscode
     - [how to debug python code in visual studio code – YouTube](https://www.youtube.com/watch?v=jHNfzAUccBA)
     - [Debugging configurations for Python apps in Visual Studio Code](https://code.visualstudio.com/docs/python/debugging)

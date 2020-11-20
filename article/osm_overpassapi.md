@@ -338,6 +338,7 @@ print(get_idr())
 
 - 找了一下資料，網路上說 relation 得到的數據，還是得定義如何將所有 members 組合，可能的步驟應該是撇除 node 後： 
 1. 首先，先分出 outer 和 inner
+
 ```python
 for id in idr:
     result = api.query('''

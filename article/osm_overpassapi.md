@@ -352,6 +352,7 @@ for id in idr:
     
     print(result.relations)
 ```
+
 2. 再分是 way 的 面資料 組成面、way 的 線資料 封閉成面 (甚至 members 下可能還會有 **子relation**，但此案沒有)
 3. 最後將 outer 生成的面 merge 後， erase inner 的部分
 

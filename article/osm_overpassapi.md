@@ -310,7 +310,23 @@ relation 的資料很多元，，以空軍基地來說，有些是幾個相鄰�
 
 - 除了 overpass-turbo 可查看資料，也可微調 overpy 套件來查看 outer、inner，打開 \python3\Lib\site-packages\overpy 目錄下的 \_\_init\_\_.py ，更改如下：  
 ![套件更改2](C:\OSM\套件更改2.JPG)
+再來輸入以下並在 `id:` 後打上 id號 就能查看
 
+```python
+import overpy
+
+result = api.query('''
+[out:json];
+(
+  relation(id:);
+);
+out;
+>;
+out skel qt;
+'''
+
+print(result.relations)
+```
 relation 是由 members 下的很多的元素(nodes、ways、relations)組成的，所有元素都有其經緯度，所以可能先獲取所有的空軍基地的 id 後，再想辦法組合 
 ```python
 import overpy
@@ -338,22 +354,6 @@ print(get_idr())
 
 - 找了一下資料，網路上說 relation 得到的數據，還是得定義如何將所有 members 組合，可能的步驟應該是撇除 node 後： 
 1. 首先，先分出 outer 和 inner
-
-```python
-for id in idr:
-    result = api.query('''
-    [out:json];
-    (
-      relation(id:{});
-    );
-    out;
-    >;
-    out skel qt;
-    '''.format(id))
-    
-    print(result.relations)
-```
-
 2. 再分是 way 的 面資料 組成面、way 的 線資料 封閉成面 (甚至 members 下可能還會有 **子relation**，但此案沒有)
 3. 最後將 outer 生成的面 merge 後， erase inner 的部分
 
